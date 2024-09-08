@@ -26,7 +26,8 @@ migrate-app:
 check: lint analyze tests
 
 lint:
-	docker compose exec php-cli ./vendor/bin/phpcbf
+	docker compose exec php-cli ./vendor/bin/phpcbf && \
+	docker compose exec php-cli ./bin/console lint:twig templates
 
 analyze:
 	docker compose exec php-cli ./vendor/bin/phpstan analyse src tests
