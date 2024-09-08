@@ -22,3 +22,14 @@ wait-db:
 
 migrate-app:
 	docker compose exec php-cli ./bin/console doctrine:migrations:migrate --no-interaction
+
+check: lint analyze tests
+
+lint:
+	docker compose exec php-cli ./vendor/bin/phpcbf
+
+analyze:
+	docker compose exec php-cli ./vendor/bin/phpstan analyse src tests
+
+tests:
+	docker compose exec php-cli ./bin/phpunit
