@@ -11,12 +11,18 @@ doctrine:
         naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
         auto_mapping: true
         mappings:
-            App:
+            User:
                 type: attribute
                 is_bundle: false
-                dir: '%kernel.project_dir%/src/Entity'
-                prefix: 'App\Entity'
-                alias: App
+                dir: '%kernel.project_dir%/src/User/Domain/Entity'
+                prefix: 'App\User\Domain\Entity'
+                alias: User
+            Article:
+              type: attribute
+              is_bundle: false
+              dir: '%kernel.project_dir%/src/Article/Domain/Entity'
+              prefix: 'App\Article\Domain\Entity'
+              alias: Article
         controller_resolver:
             auto_mapping: false
 

@@ -44,5 +44,13 @@ services:
     volumes:
       - database_data:/var/lib/postgresql/data:rw
 
+  rabbitmq:
+    image: rabbitmq:3.12-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    restart: unless-stopped
+    tty: true
+
 volumes:
   database_data:
