@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Controller;
+namespace App\Shared\Infrastructure\Http\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 

@@ -6,10 +6,9 @@ namespace App\Article\Application\Command\CreateArticle;
 
 use App\Article\Domain\Entity\Article\Article;
 use App\Article\Infrastructure\Doctrine\Repository\ArticleRepository;
-use Symfony\Component\Messenger\Attribute\AsMessageHandler;
+use App\Shared\Application\Command\CommandHandlerInterface;
 
-#[AsMessageHandler]
-readonly class CreateArticleCommandHandler
+readonly class CreateArticleCommandHandler implements CommandHandlerInterface
 {
     public function __construct(
         private ArticleRepository $articleRepository,

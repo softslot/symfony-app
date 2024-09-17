@@ -8,7 +8,7 @@ use App\Article\Infrastructure\Doctrine\Repository\ArticleRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ArticleRepository::class)]
-#[ORM\Table(name: '`articles`')]
+#[ORM\Table(name: '`article_articles`')]
 class Article
 {
     #[ORM\Id]
