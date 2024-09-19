@@ -7,7 +7,7 @@ namespace App\Article\Application\DTO;
 readonly class ArticleDTO
 {
     public function __construct(
-        public int $id,
+        public string $id,
         public string $title,
         public string $content,
     ) {

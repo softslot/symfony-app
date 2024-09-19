@@ -11,10 +11,8 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Table(name: '`article_articles`')]
 class Article
 {
-    #[ORM\Id]
-    #[ORM\GeneratedValue]
-    #[ORM\Column]
-    private ?int $id = null;
+    #[ORM\Embedded(class: ArticleId::class, columnPrefix: false)]
+    private ArticleId $id;
 
     #[ORM\Column(name: 'title', length: 255, nullable: false)]
     private string $title;
@@ -23,16 +21,18 @@ class Article
     private string $content;
 
     public function __construct(
+        ArticleId $id,
         string $title,
         string $content,
     ) {
+        $this->id = $id;
         $this->title = $title;
         $this->content = $content;
     }
 
-    public function getId(): ?int
+    public function getId(): string
     {
-        return $this->id;
+        return $this->id->getValue();
     }
 
     public function getTitle(): string

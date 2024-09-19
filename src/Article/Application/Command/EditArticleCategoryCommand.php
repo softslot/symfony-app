@@ -4,19 +4,18 @@ declare(strict_types=1);
 
 namespace App\Article\Application\Command;
 
+use App\Article\Infrastructure\Validator\ArticleExist;
 use App\Shared\Application\Command\CommandInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
-class CreateArticleCommand implements CommandInterface
+readonly class EditArticleCategoryCommand implements CommandInterface
 {
     public function __construct(
-        #[Assert\NotBlank]
+        #[ArticleExist]
         #[Assert\Uuid]
         public string $id,
-        #[Assert\NotBlank]
+        #[Assert\Length(min: 3)]
         public string $title,
-        #[Assert\NotBlank]
-        public string $content,
     ) {
     }
 }

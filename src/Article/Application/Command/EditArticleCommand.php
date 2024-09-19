@@ -12,7 +12,8 @@ readonly class EditArticleCommand implements CommandInterface
 {
     public function __construct(
         #[ArticleExist]
-        public int $id,
+        #[Assert\Uuid]
+        public string $id,
         #[Assert\Length(min: 3)]
         public string $title,
         #[Assert\Length(min: 10)]

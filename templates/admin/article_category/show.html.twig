@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  <h1>article</h1>
+  <div>
+    ID: {{ category.id }}
+  </div>
+  <div>
+    Title: {{ category.title }}
+  </div>
+  <div>
+    Content: {{ category.content }}
+  </div>
+  <div>
+    <a href="{{ path('admin.article_category.update', { id: category.id }) }}">Edit</a>
+  </div>
+{% endblock %}

@@ -4,15 +4,14 @@ declare(strict_types=1);
 
 namespace App\Article\Infrastructure\Form;
 
-use App\Article\Application\Command\CreateArticleCommand;
+use App\Article\Application\Command\CreateArticleCategoryCommand;
 use App\Article\Domain\Entity\Article\ArticleId;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\DataMapperInterface;
-use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 
-class CreateArticleForm extends AbstractType implements DataMapperInterface
+class CreateArticleCategoryForm extends AbstractType implements DataMapperInterface
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
@@ -20,7 +19,6 @@ class CreateArticleForm extends AbstractType implements DataMapperInterface
 
         $builder
             ->add('title', TextType::class)
-            ->add('content', TextareaType::class)
         ;
     }
 
@@ -32,10 +30,9 @@ class CreateArticleForm extends AbstractType implements DataMapperInterface
     {
         $forms = iterator_to_array($forms);
 
-        $viewData = new CreateArticleCommand(
+        $viewData = new CreateArticleCategoryCommand(
             ArticleId::next(),
             $forms['title']->getData(),
-            $forms['content']->getData(),
         );
     }
 }
