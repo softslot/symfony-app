@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Article\Application\Query\GetArticle;
+namespace App\Article\Application\Query;
 
 use App\Shared\Application\Query\QueryInterface;
 

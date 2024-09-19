@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  <h1>article</h1>
+  <div>
+    ID: {{ article.id }}
+  </div>
+  <div>
+    Title: {{ article.title }}
+  </div>
+  <div>
+    Content: {{ article.content }}
+  </div>
+  <div>
+    <a href="{{ path('admin.article.update', { id: article.id }) }}">Edit</a>
+  </div>
+{% endblock %}

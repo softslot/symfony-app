@@ -8,4 +8,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 abstract class BaseController extends AbstractController
 {
+    protected function addSuccessFlash(string $message): void
+    {
+        $this->addFlash('success', $message);
+    }
+
+    protected function addErrorFlash(string $message): void
+    {
+        $this->addFlash('error', $message);
+    }
 }

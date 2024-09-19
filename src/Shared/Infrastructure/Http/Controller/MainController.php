@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Shared\Infrastructure\Http\Controller;
 
-use App\Article\Application\Command\CreateArticle\CreateArticleCommand;
-use App\Article\Application\Query\GetArticle\GetArticleQuery;
+use App\Article\Application\Command\CreateArticleCommand;
+use App\Article\Application\Query\GetArticleQuery;
 use App\Shared\Application\Command\CommandBusInterface;
 use App\Shared\Application\Query\QueryBusInterface;
 use Symfony\Component\HttpFoundation\Response;

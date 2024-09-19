@@ -21,8 +21,12 @@ services:
         resource: '../src/Article/'
         exclude:
             - '../src/Article/Domain/Entity'
+            - '../src/Article/Application/Command'
+            - '../src/Article/Application/Query'
 
     App\User\:
         resource: '../src/User/'
         exclude:
             - '../src/User/Domain/Entity'
+            - '../src/User/Application/Command'
+            - '../src/User/Application/Query'
